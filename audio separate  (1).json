@@ -1,0 +1,53 @@
+{
+  "113": {
+    "inputs": {
+      "audio_file": "\"E:\\озвучка\\исходники\\человек паук\\Я думаю в каждом из нас живет герой Человек-паук 2 2004 [get-save.com].mp4.wav\"",
+      "seek_seconds": 0,
+      "duration": 0
+    },
+    "class_type": "VHS_LoadAudio",
+    "_meta": {
+      "title": "Load Audio (Path)🎥🅥🅗🅢"
+    }
+  },
+  "116": {
+    "inputs": {
+      "model_name": "MelBandRoformer_fp32.safetensors"
+    },
+    "class_type": "MelBandRoFormerModelLoader",
+    "_meta": {
+      "title": "Mel-Band RoFormer Model Loader"
+    }
+  },
+  "117": {
+    "inputs": {
+      "model": [
+        "116",
+        0
+      ],
+      "audio": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "MelBandRoFormerSampler",
+    "_meta": {
+      "title": "Mel-Band RoFormer Sampler"
+    }
+  },
+  "123": {
+    "inputs": {
+      "filename_prefix": "",
+      "format": "mp3",
+      "format.quality": "128k",
+      "audio": [
+        "117",
+        1
+      ]
+    },
+    "class_type": "SaveAudioAdvanced",
+    "_meta": {
+      "title": "Save Audio (Advanced)"
+    }
+  }
+}
